@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FUll stack website</title>
+    <title>Full stack website</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,7 +21,16 @@
         <a href="#">Contact</a>
       </nav>
       <div class="user-auth">
-        <button type="button" class="login-btn-modal">Login</button>
+        <div class="profile-box">
+          <div class="avatar-circle">R</div>
+          <div class="dropdown">
+            <a href="#">My account</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+        <button type="button" class="login-btn-modal" style="display: none">
+          Login
+        </button>
       </div>
     </header>
     <section>

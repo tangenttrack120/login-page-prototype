@@ -74,10 +74,28 @@ section h1 {
   margin: auto;
   display: flex;
   align-items: center;
+  transition: height 0.2s ease, transform 0.5s ease;
+  overflow: hidden;
+  transform: scale(0);
+}
+.auth-modal.show {
+  transform: scale(1);
+}
+.auth-modal.slide {
+  height: 520px;
 }
 .auth-modal .form-box {
   width: 100%;
   padding: 40px;
+}
+.auth-modal .form-box.login,
+.auth-modal.slide .form-box.register {
+  transform: translateX(0);
+  transition: transform 0.18s ease;
+}
+.auth-modal.slide .form-box.login {
+  transform: translateX(-400px);
+  transition: none;
 }
 .auth-modal .form-box.register {
   position: absolute;
@@ -152,4 +170,47 @@ section h1 {
   color: #222;
   cursor: pointer;
   z-index: 1;
+}
+.profile-box .avatar-circle {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 25px;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+}
+.profile-box .dropdown {
+  position: absolute;
+  top: 85px;
+  right: 100px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.profile-box.show .dropdown {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.profile-box .dropdown a {
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 2px 0;
+  transition: 0.2s;
+}
+.profile-box .dropdown a:hover {
+  background: #eee;
 }
