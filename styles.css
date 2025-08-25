@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(20px);
+}
+.logo {
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: auto;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+.user-auth {
+  margin-left: 40px;
+}
+.user-auth .login-btn-modal {
+  height: 40px;
+  padding: 0 35px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.user-auth .login-btn-modal:hover {
+  background: #fff;
+  color: #222;
+}
+section {
+  min-height: 100vh;
+  background: url("./images/blender\ glass.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0 100px;
+}
+section h1 {
+  position: absolute;
+  bottom: 40px;
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
+}
