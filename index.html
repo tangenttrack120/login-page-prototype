@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FUll stack website</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -22,5 +26,63 @@
     <section>
       <h1>Hey Developer!</h1>
     </section>
+
+    <div class="auth-modal">
+      <button type="button" class="close-btn-modal">
+        <i class="bx bx-x"></i>
+      </button>
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form action="">
+          <div class="input-box">
+            <input type="email" name="email" placeholder="Email" required />
+            <i class="bx bxs-envelope-alt"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <i class="bx bxs-lock-keyhole"></i>
+          </div>
+          <button type="submit" name="login_btn" class="btn">Login</button>
+          <p>
+            Don't have an account?
+            <a href="#" class="register-link">Register</a>
+          </p>
+        </form>
+      </div>
+      <div class="form-box register">
+        <h2>Register</h2>
+        <form action="">
+          <div class="input-box">
+            <input type="texxt" name="name" placeholder="Name" required />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="email" name="email" placeholder="Email" required />
+            <i class="bx bxs-envelope-alt"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <i class="bx bxs-lock-keyhole"></i>
+          </div>
+          <button type="submit" name="register_btn" class="btn">
+            Register
+          </button>
+          <p>
+            Already have an account?
+            <a href="#" class="login-link">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
