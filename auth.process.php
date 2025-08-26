@@ -28,4 +28,29 @@ if (isset($_POST['register_btn'])) {
     exit();
 }
 
+if (isset($_POST['login_btn'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $result = $conn->query("SELECT * FROM users WHERE email = '$email'");
+    $user = $result->num_rows > 0 ? $result->fetch_assoc() : null;
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['alerts'][] = [
+            'type' => 'success',
+            'message' => 'Login successful'
+        ];
+    } else {
+        $_SESSION['alerts'][] = [
+            'type' => 'error',
+            'message' => 'Incorrect email or password!'
+        ];
+        $_SESSION['active_form'] = 'login';
+    }
+
+    header('Location: index.php');
+    exit();
+}
+
 ?>

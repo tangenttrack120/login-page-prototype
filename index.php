@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+$name = $_SESSION['name'] ?? null;
+$alerts = $_SESSION['alerts'] ?? [];
+$active_form = $_SESSION['active_form'] ?? '';
+
+session_unset();
+
+if ($name !== null) $_SESSION['name'] = $name;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,26 +35,33 @@
         <a href="#">Contact</a>
       </nav>
       <div class="user-auth">
-        <div class="profile-box" style="display: none">
-          <div class="avatar-circle">R</div>
+        <?php if (!empty($name)): ?>
+        <div class="profile-box">
+          <div class="avatar-circle"><?= strtoupper($name[0]); ?></div>
           <div class="dropdown">
             <a href="#">My account</a>
             <a href="#">Logout</a>
           </div>
         </div>
+        <?php else: ?>
         <button type="button" class="login-btn-modal">Login</button>
+        <?php endif; ?>
       </div>
     </header>
     <section>
-      <h1>Hey Developer!</h1>
+      <h1>Hey <?= $name ?? 'Developer'?>!</h1>
     </section>
-    <div class="alert-box" style="display: none">
-      <div class="alert success">
-        <i class="bx bxs-check-circle"></i>
-        <span>Registration Successful</span>
+    <?php if (!empty($alerts)): ?>
+    <div class="alert-box">
+      <?php foreach ($alerts as $alerts): ?>
+      <div class="alert <?= $alert['type']; ?>">
+        <i class="bx <?= $alert['type'] === 'success' ? 'bxs-check-cirle' : 'bxs-x-circle'; ?>"></i>
+        <span><?= $alert['message']; ?></span>
       </div>
+      <?php endforeach; ?>
     </div>
-    <div class="auth-modal">
+    <?php endif; ?>
+    <div class="auth-modal <?= $active_form === 'register' ? 'show slide' : ($active_form === 'login' ? 'show' : ''); ?>">
       <button type="button" class="close-btn-modal">
         <i class="bx bx-x"></i>
       </button>
