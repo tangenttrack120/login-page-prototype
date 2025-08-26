@@ -53,9 +53,9 @@ if ($name !== null) $_SESSION['name'] = $name;
     </section>
     <?php if (!empty($alerts)): ?>
     <div class="alert-box">
-      <?php foreach ($alerts as $alerts): ?>
+      <?php foreach ($alerts as $alert): ?>
       <div class="alert <?= $alert['type']; ?>">
-        <i class="bx <?= $alert['type'] === 'success' ? 'bxs-check-cirle' : 'bxs-x-circle'; ?>"></i>
+        <i class="bx <?= $alert['type'] === 'success' ? 'bxs-check-circle' : 'bxs-x-circle'; ?>"></i>
         <span><?= $alert['message']; ?></span>
       </div>
       <?php endforeach; ?>
@@ -92,7 +92,7 @@ if ($name !== null) $_SESSION['name'] = $name;
         <h2>Register</h2>
         <form action="auth.process.php" method="POST">
           <div class="input-box">
-            <input type="texxt" name="name" placeholder="Name" required />
+            <input type="text" name="name" placeholder="Name" required />
             <i class="bx bxs-user"></i>
           </div>
           <div class="input-box">
