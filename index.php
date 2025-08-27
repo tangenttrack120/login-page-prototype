@@ -40,7 +40,7 @@ if ($name !== null) $_SESSION['name'] = $name;
           <div class="avatar-circle"><?= strtoupper($name[0]); ?></div>
           <div class="dropdown">
             <a href="#">My account</a>
-            <a href="#">Logout</a>
+            <a href="logout.php">Logout</a>
           </div>
         </div>
         <?php else: ?>
